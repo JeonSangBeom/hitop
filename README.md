@@ -1,3 +1,33 @@
+# tis_java_03
+
+## sass-compiler 설정방법
+
+1. extention열기
+2. live-sass 검색
+3. retwick이 만든 거 다운로드
+4. setting 파일열기
+   - format 설정
+   - compact
+   - compressed
+
+`background`혹은 `background-image` 속성으로 요소에 배경 이미지를 삽입할 수 있습니다.
+
+```javascript
+const mainVisualSlider = new Swiper("#mainVisual", {
+  autoplay: true,
+  speed: 1000,
+  effect: "fade",
+  loop: true,
+  navigation: {
+    prevEl: "#mainVisual .prev",
+    nextEl: "#mainVisual .next",
+  },
+});
+```
+
+---
+
+```scss
 @import "vars";
 @import "mixins";
 html {
@@ -5,9 +35,9 @@ html {
 }
 body {
   font-size: 1.6rem;
-  font-family: "Poppins", "Noto sans KR", sns-serif;
+  font-family: "Poppins", "Noto Sans KR", sans-serif;
   color: #111;
-} //영문을 먼저 입력을 하여야 한다(오류 방지)
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -18,12 +48,11 @@ button {
   outline: none;
 }
 img {
-  vertical-align: top; //이미지 깔끔하게 각 잡을때 사용
+  vertical-align: top;
 }
 .hidden {
   display: none;
 }
-// inherit-강제 상속(a태그는 상속을 안받는다)
 #header {
   position: fixed;
   width: 100%;
@@ -40,11 +69,17 @@ img {
     display: block;
     position: absolute;
     height: 1px;
-    // width: 100%;
-    left: 0; //left:0 right:0 둘다 영을 주면 100퍼센트가 된다 보통 직사각형에사용
-    right: 0;
+    //width: 100%;
+    left: 0px;
+    right: 0px;
     top: 89px;
-    background-color: rgba(255, 255, 255, 0.5);
+    //top: 89px;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.5
+    ); // r(0~255),g(0~255),b(0~255),a(0~1)
   }
   .container {
     display: flex;
@@ -65,7 +100,7 @@ img {
         > li {
           > a {
             font-size: $medium-size;
-            text-transform: uppercase;
+            text-transform: capitalize;
             font-weight: 500;
             display: flex;
             justify-content: center;
@@ -137,19 +172,17 @@ img {
             }
           }
         }
-        //&은 그 자식이 아닌 본인을 잡을 때 사용
-        //open
       }
     }
   }
 }
-//header end
+// header end
 #footer {
   background-color: $gray-color;
   color: $white-color;
   .utilMenu {
-    //built in function darken(color,10)
-    //transparentize(color, 0.5); - 투명도
+    // built in function  darken(color,10)
+    // transparentize(color, 0.5)
     border-bottom: 1px solid transparentize($white-color, 0.5);
     ul {
       display: flex;
@@ -180,8 +213,6 @@ img {
     padding: 50px 0;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    position: relative;
     .address {
       margin-left: 50px;
       line-height: 1.5;
@@ -200,3 +231,65 @@ img {
     }
   }
 }
+```
+
+_이탤릭체_  
+**볼드**
+~~취소선~~  
+<u>밑줄</u>  
+`<p>태그를 쓰고 싶어요</p>`
+
+> 인용문
+> 러아널ㅇㄴ
+> 러ㅏ어나ㅣ렁ㄴ
+> ㅓ랑너링ㄴ
+> ![alt 태그에 들어가는 글자](../hitop/images/images/main/businessField01.jpg) > ![이미지를 대신할 글자 alt](../hitop/images/images/main/mainLink01.jpg) > [![이미지를 대신할 글자 alt](../hitop/images/images/main/mainLink01.jpg)](http://www.daum.net)
+
+[naver](http://www.naver.com)
+
+1. 리스트01
+   - 이너리스트
+   - 이너리스트02
+   - 이너리스트03
+2. 리스트02
+3. 리스트03
+
+---
+
+- 순서 없는 리스트
+- 순서 없는 리스트
+- 순서 없는 리스트
+- 순서 없는 리스트
+
+**_글자가 두껍게 됩니다._**  
+~~취소선 나타내기~~  
+[GOOGLE](https://google.com)
+
+[NAVER](https://naver.com "링크 설명(title)을 작성하세요.")
+
+[상대적 참조](../users/login)
+
+[Dribbble][dribbble link]
+
+[GitHub][1]
+
+[DAUM](http://www.daum.net)  
+[naver]()
+
+문서 안에서 [참조 링크]를 그대로 사용할 수도 있습니다.
+
+다음과 같이 문서 내 일반 URL이나 꺾쇠 괄호(`< >`, Angle Brackets)안의 URL은 자동으로 링크를 사용합니다.
+구글 홈페이지: https://google.com
+네이버 홈페이지: <https://naver.com>
+
+[dribbble link]: https://dribbble.com
+[1]: https://github.com
+[참조 링크]: https://naver.com "네이버로 이동합니다!"
+
+---
+
+1. 추가
+2. 추가
+3. 추가
+
+---
