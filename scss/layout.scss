@@ -70,10 +70,16 @@ img {
               pointer-events: auto;
               opacity: 1;
               visibility: visible;
-              transform: translateY(0);
+              transform: translateY(10);
             }
             > a {
-              background-color: $main-color;
+              // background-color: $main-color;
+              &::after {
+                content: "";
+                display: block;
+                height: 10px;
+                background-color: #000;
+              }
             }
           }
           > a {
@@ -87,17 +93,29 @@ img {
             padding: 0 50px;
           }
           .depth02 {
-            opacity: 0;
-            visibility: hidden;
+            // opacity: 0;
+            // visibility: hidden;
             position: absolute;
             width: 100%;
             padding: 20px 10px;
             pointer-events: none;
             box-sizing: border-box;
-            border-radius: 0 0 15px 15px;
+            border-radius: 15px 15px 15px 15px;
             transform: translateY(50px);
             transition: all 0.25s ease;
             background-color: $main-color;
+            &::before {
+              content: "";
+              display: block;
+              border: 10px solid $main-color;
+              border-color: transparent;
+              border-bottom-color: $main-color;
+              width: 0;
+              height: 0;
+              position: absolute;
+              left: calc(50% - 10px);
+              top: -20%;
+            }
             li {
               a {
                 display: block;
