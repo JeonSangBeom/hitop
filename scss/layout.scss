@@ -28,7 +28,7 @@ img {
   position: fixed;
   width: 100%;
   height: 90px;
-  overflow: hidden;
+  // overflow: hidden;
   transition: all 0.25s ease;
   z-index: 99;
   &.open {
@@ -45,6 +45,7 @@ img {
     right: 0;
     top: 89px;
     background-color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
   }
   .container {
     display: flex;
@@ -63,6 +64,18 @@ img {
       .list {
         display: flex;
         > li {
+          position: relative;
+          &:hover {
+            .depth02 {
+              pointer-events: auto;
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+            }
+            > a {
+              background-color: $main-color;
+            }
+          }
           > a {
             font-size: $medium-size;
             text-transform: uppercase;
@@ -74,10 +87,26 @@ img {
             padding: 0 50px;
           }
           .depth02 {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            width: 100%;
+            padding: 20px 10px;
+            pointer-events: none;
+            box-sizing: border-box;
+            border-radius: 0 0 15px 15px;
+            transform: translateY(50px);
+            transition: all 0.25s ease;
+            background-color: $main-color;
             li {
               a {
                 display: block;
                 padding: 10px 0;
+                &:hover {
+                  background-color: darken(&main-color, 10);
+                  border-radius: 5px;
+                  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+                }
               }
             }
           }
